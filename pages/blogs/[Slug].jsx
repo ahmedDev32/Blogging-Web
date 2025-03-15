@@ -120,7 +120,7 @@ const Slug = ({ Slug }) => {
                 />
 
                 {/* Blog post content */}
-                <div className="prose prose-sm text-xl sm:prose lg:prose-lg xl:prose-xl mx-auto" dangerouslySetInnerHTML={{ __html: blog.blog[0].content} } >
+                <div className="prose prose-sm text-xl sm:prose lg:prose-lg xl:prose-xl mx-auto" dangerouslySetInnerHTML={{ __html: blog.blog[0].orignal_post} } >
                   
                 </div>
                 <Image
