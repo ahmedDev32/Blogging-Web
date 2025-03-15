@@ -24,7 +24,8 @@ const BlogsCard = ({item}) => {
                     {item.title}
                   </h1>
                   <p className="leading-relaxed mb-3">
-                :earn More About {item.title}
+                <div dangerouslySetInnerHTML={{ __html:item.orignal_post }} />
+
 
                   </p>
                   <div className="flex items-center flex-wrap">
