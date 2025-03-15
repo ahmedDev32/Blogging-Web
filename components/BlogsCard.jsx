@@ -24,10 +24,9 @@ const BlogsCard = ({item}) => {
                     {item.title}
                   </h1>
                   <p className="leading-relaxed mb-3">
-                <div dangerouslySetInnerHTML={{ __html:item.orignal_post }} />
+  {item.orignal_post.slice(0, 30)}...
+</p>
 
-
-                  </p>
                   <div className="flex items-center flex-wrap">
                     <a className="text-pink-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
