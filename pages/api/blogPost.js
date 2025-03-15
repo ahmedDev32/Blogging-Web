@@ -52,13 +52,13 @@ let handler = async (req, res) => {
   
   try {
     if (req.method === 'POST') {
-      const { title, content, image, Category, Subcategory } = req.body;
+      const { title, DatePosted, image, orignal_post } = req.body;
       const Slug = title.replace(/ /g, '-');
       console.log(Slug);
 
       // Save the new blog post to the database
       let blogData = new blogSchema({
-        title, content, image, Category, Subcategory, Slug
+        title, DatePosted, image, orignal_post,Slug
       });
       await blogData.save();
 

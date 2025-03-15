@@ -30,25 +30,42 @@ const Slug = ({ Slug }) => {
     {
       blog&&blog.blog&&<Head>
       <title>{blog?.blog[0]?.title || 'faddyblog Blog'}</title>
-      <meta name="description" content={blog?.blog[0]?.description || 'Read the latest articles and insights on faddyblog.'} />
+      <meta name="description" content={blog?.blog[0]?.orignal_post || 'Read the latest articles and insights on faddyblog.'} />
       <meta
   name="keywords"
-  content={`${Slug}, ${blog.blog[0].Category}, ${blog.blog[0].Subcategory}`}
+  content={`${Slug}, ${blog.blog[0].title} `}
 />
 
       <meta name="author" content="faddyblog" />
       <link rel="canonical" href={`https://faddyblog.blog/blogs/${Slug}`} />
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={blog?.blog[0]?.title || 'faddyblog Blog'} />
-      <meta property="og:description" content={blog?.blog[0]?.description || 'Read the latest articles and insights on faddyblog.'} />
+      <meta property="og:description" content={blog?.blog[0]?.orignal_post || 'Read the latest articles and insights on faddyblog.'} />
       <meta property="og:type" content="article" />
       <meta property="og:url" content={`https://faddyblog.blog/blogs/${Slug}`} />
       <meta property="og:image" content={blog?.blog[0]?.image || 'https://faddyblog.blog/images/favicon.svg'} />
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={blog?.blog[0]?.title || 'faddyblog Blog'} />
-      <meta name="twitter:description" content={blog?.blog[0]?.description || 'Read the latest articles and insights on faddyblog.'} />
+      <meta name="twitter:description" content={blog?.blog[0]?.orignal_post || 'Read the latest articles and insights on faddyblog.'} />
       <meta name="twitter:image" content={blog?.blog[0]?.image || 'https://faddyblog.blog/images/favicon.svg'} />
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "faddyblog",
+      "url": `https://www.faddyblog.com/${Slug}`,
+      "description": blog?.[0]?.orignal_post || "No description available",
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed"
+      }
+    }),
+  }}
+/>;
+
     </Head>
     }
     

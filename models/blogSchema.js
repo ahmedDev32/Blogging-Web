@@ -6,7 +6,7 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Title is required'],
   },
-  content: {
+  orignal_post: {
     type: String,
     required: [true, 'Content is required'],
   },
@@ -18,15 +18,11 @@ const BlogSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Image URL is required'],
   },
-  Category: {
-    type: String,
-    required: [true, 'Category  is required'],
-    
+  DatePosted:{
+  type:String,
+  required:[true,'Date posted required']
   },
-  Subcategory:{
-    type: String,
-    required: [true, 'Subcategory  is required'],
-  },
+
   createdAt: {
     type: Date,
     default: Date.now,
